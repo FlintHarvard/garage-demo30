@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rijzonderruitschade | Autoruit Specialist Voorburg</title>
+<meta name="description" content="Rijzonderruitschade Voorburg - Autoruit reparatie en vervanging. Bel 06-12431210.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Questrial&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --accent:#E11D48;
+  --accent-light:#F43F5E;
+  --accent-glow:rgba(225,29,72,0.3);
+  --accent-subtle:rgba(225,29,72,0.07);
+  --bg:#0A0708;
+  --bg2:#0F0C0D;
+  --card:#151213;
+  --card-hover:#1B1819;
+  --text:#F4F0F1;
+  --text-sec:#948E90;
+  --text-muted:#585254;
+  --border:rgba(255,255,255,0.06);
+  --border-accent:rgba(225,29,72,0.18);
+  --radius:12px;
+  --radius-lg:20px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Questrial',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Jost',sans-serif;line-height:1.15}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,7,8,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .4s}
+.navbar.scrolled{background:rgba(10,7,8,0.95);box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.nav-brand{font-family:'Jost',sans-serif;font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.nav-logo{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.55rem;color:#fff;font-weight:800}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--text-sec);transition:color .3s}
+.nav-links a:hover{color:var(--accent-light)}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;font-weight:600;font-size:.85rem;border-radius:8px;border:none;cursor:pointer;font-family:'Questrial',sans-serif;transition:all .3s}
+.btn-cta:hover{box-shadow:0 0 30px var(--accent-glow);transform:translateY(-1px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:transparent;border:1px solid var(--border);color:var(--text-sec);font-weight:500;font-size:.85rem;border-radius:8px;cursor:pointer;transition:all .3s;font-family:'Questrial',sans-serif}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent-light);background:var(--accent-subtle)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:all .3s;transform-origin:center}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(2.5px,2.5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(2.5px,-2.5px)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,7,8,0.98);backdrop-filter:blur(20px);padding:24px;border-bottom:1px solid var(--border);transform:translateY(-100%);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.mobile-menu.open{transform:translateY(0);opacity:1}
+.mobile-menu a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--text-sec);border-bottom:1px solid var(--border)}
+.mobile-menu .btn-cta{margin-top:16px;width:100%;justify-content:center}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 65% 35%,rgba(225,29,72,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 45% at 10% 60%,rgba(225,29,72,.04) 0%,transparent 50%),var(--bg)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03}
+.hs{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+.hs1{width:420px;height:420px;top:-70px;right:-50px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);animation:fl 13s ease-in-out infinite}
+.hs2{width:280px;height:280px;bottom:70px;left:-50px;background:radial-gradient(circle,rgba(225,29,72,.1) 0%,transparent 70%);animation:fl 16s ease-in-out infinite reverse}
+@keyframes fl{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(15px,-22px) scale(1.08)}}
+
+.hero-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text{max-width:580px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:50px;background:var(--accent-subtle);border:1px solid var(--border-accent);font-size:.78rem;font-weight:600;color:var(--accent-light);margin-bottom:24px}
+.hero-title{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:20px;background:linear-gradient(135deg,var(--text) 40%,var(--accent-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--text-sec);line-height:1.7;margin-bottom:36px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.hero-stats{display:flex;gap:36px}
+.stat-val{font-family:'Jost',sans-serif;font-size:1.8rem;font-weight:700;color:var(--accent-light);line-height:1}
+.stat-lbl{font-size:.78rem;color:var(--text-muted);margin-top:4px}
+
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-card{width:100%;max-width:440px;aspect-ratio:4/3;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;position:relative}
+.hero-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(225,29,72,.08) 0%,transparent 40%),linear-gradient(225deg,rgba(225,29,72,.04) 0%,transparent 50%)}
+.hero-card-inner{position:absolute;inset:20px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;z-index:1}
+.hero-card-icon{width:60px;height:60px;margin-bottom:16px;background:linear-gradient(135deg,var(--accent),var(--accent-light));border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px var(--accent-glow)}
+.hero-card-title{font-family:'Jost',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:6px}
+.hero-card-sub{font-size:.83rem;color:var(--text-sec)}
+.deco{position:absolute;background:var(--border-accent)}.dv1{top:0;left:35%;width:1px;height:100%;opacity:.3}.dv2{top:0;left:68%;width:1px;height:100%;opacity:.2}.dh1{top:45%;left:0;width:100%;height:1px;opacity:.2}
+.fc{position:absolute;padding:11px 15px;background:rgba(21,18,19,.92);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(10px);box-shadow:0 8px 28px rgba(0,0,0,.35);z-index:2}
+.fc1{top:-14px;right:-14px}.fc2{bottom:24px;left:-22px}
+.fc-dot{width:8px;height:8px;border-radius:50%;background:#22C55E;display:inline-block;margin-right:6px;vertical-align:middle}
+.fc-txt{font-size:.75rem;color:var(--text-sec);font-weight:500}
+.fc-val{font-family:'Jost',sans-serif;font-weight:700;font-size:.95rem;color:var(--accent-light)}
+
+section{padding:100px 24px}.container{max-width:1200px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--accent-light);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.section-label::before{content:'';width:20px;height:2px;background:var(--accent)}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+.section-sub{font-size:1rem;color:var(--text-sec);max-width:540px;line-height:1.7}
+
+.diensten{background:var(--bg2)}
+.diensten-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:44px}
+.dienst{padding:28px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:all .4s;position:relative;overflow:hidden}
+.dienst::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-light));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.dienst:hover{border-color:var(--border-accent);transform:translateY(-3px)}.dienst:hover::after{transform:scaleX(1)}
+.dienst-icon{width:44px;height:44px;margin-bottom:18px;background:var(--accent-subtle);border:1px solid var(--border-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--accent-light);transition:all .3s}
+.dienst:hover .dienst-icon{background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;box-shadow:0 4px 20px var(--accent-glow)}
+.dienst h3{font-size:1.05rem;font-weight:600;margin-bottom:8px}.dienst p{font-size:.86rem;color:var(--text-sec);line-height:1.6}
+
+.werk-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-top:44px}
+.werk-visual{position:relative;aspect-ratio:4/3;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.werk-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 35% 50%,rgba(225,29,72,.1) 0%,transparent 50%),radial-gradient(circle at 70% 65%,rgba(225,29,72,.05) 0%,transparent 40%)}
+.werk-visual-c{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:1;padding:32px;text-align:center}
+.werk-visual-c svg{margin-bottom:14px;color:var(--accent-light);opacity:.6}.werk-visual-c p{color:var(--text-muted);font-size:.88rem}
+.features{list-style:none}
+.features li{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}.features li:last-child{border-bottom:none}
+.f-chk{width:28px;height:28px;flex-shrink:0;background:var(--accent-subtle);border:1px solid var(--border-accent);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--accent-light);margin-top:2px}
+.f-text h4{font-size:.95rem;font-weight:600;margin-bottom:3px}.f-text p{font-size:.83rem;color:var(--text-sec)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:44px}
+.contact-cards{display:flex;flex-direction:column;gap:14px}
+.c-card{padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:flex-start;gap:14px;transition:border-color .3s}.c-card:hover{border-color:var(--border-accent)}
+.c-icon{width:40px;height:40px;flex-shrink:0;background:var(--accent-subtle);border:1px solid var(--border-accent);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--accent-light)}
+.c-card h4{font-size:.9rem;font-weight:600;margin-bottom:3px}.c-card p{font-size:.85rem;color:var(--text-sec)}.c-card a{color:var(--accent-light)}
+.form-wrap{padding:28px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.form-wrap h3{font-size:1.1rem;font-weight:600;margin-bottom:22px}
+.fg{margin-bottom:14px}.fg label{display:block;font-size:.75rem;font-weight:600;color:var(--text-sec);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.fg input,.fg textarea,.fg select{width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border);border-radius:7px;color:var(--text);font-family:'Questrial',sans-serif;font-size:.88rem;transition:border-color .3s,box-shadow .3s;outline:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.fg textarea{resize:vertical;min-height:90px}.fg select option{background:var(--bg)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-submit{width:100%;padding:13px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;font-weight:600;font-size:.92rem;border:none;border-radius:8px;cursor:pointer;font-family:'Questrial',sans-serif;transition:all .3s}
+.btn-submit:hover{box-shadow:0 0 30px var(--accent-glow)}
+
+.footer{padding:36px 24px;border-top:1px solid var(--border);text-align:center}.footer p{font-size:.82rem;color:var(--text-muted)}.footer .accent{color:var(--accent-light)}
+
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.fade-in.visible{opacity:1;transform:translateY(0)}
+.fd1{transition-delay:.1s}.fd2{transition-delay:.2s}.fd3{transition-delay:.3s}.fd4{transition-delay:.4s}.fd5{transition-delay:.5s}
+
+@media(max-width:900px){.hero-content,.werk-grid,.contact-grid{grid-template-columns:1fr}.hero-visual{order:-1}.hero-card{max-width:380px}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:block}.hero{min-height:auto;padding:100px 20px 60px}section{padding:70px 20px}.diensten-grid{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}.fc1{right:0}.fc2{left:0}}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-brand"><div class="nav-logo">RZR</div>Rijzonderruitschade</a>
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over">Over Ons</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:0612431210" class="btn-cta nav-cta">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Bel Direct</span>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#diensten" onclick="closeMobile()">Diensten</a>
+  <a href="#over" onclick="closeMobile()">Over Ons</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:0612431210" class="btn-cta"><span>Bel 06-12431210</span></a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hs hs1"></div><div class="hs hs2"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        Autoruit Specialist • Voorburg
+      </div>
+      <h1 class="hero-title">Rij zonder ruitschade — snel hersteld in Voorburg</h1>
+      <p class="hero-sub">Rijzonderruitschade — specialist in autoruit reparatie en vervanging. Sterretje, barst of complete ruit? Wij zorgen dat u snel en veilig weer de weg op kunt.</p>
+      <div class="hero-actions">
+        <a href="tel:0612431210" class="btn-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Bel 06-12431210</span>
+        </a>
+        <a href="#contact" class="btn-outline"><span>Offerte Aanvragen</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">5.0</div><div class="stat-lbl">Google Rating</div></div>
+        <div><div class="stat-val">Voorburg</div><div class="stat-lbl">Regio Den Haag</div></div>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <div class="hero-card">
+        <div class="deco dv1"></div><div class="deco dv2"></div><div class="deco dh1"></div>
+        <div class="hero-card-inner">
+          <div class="hero-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <div class="hero-card-title">Ruitschade Specialist</div>
+          <div class="hero-card-sub">Kersengaarde 246, Voorburg</div>
+        </div>
+      </div>
+      <div class="fc fc1"><div class="fc-val">Rijzonderruitschade</div><div class="fc-txt">Voorburg</div></div>
+      <div class="fc fc2"><span class="fc-dot"></span><span class="fc-txt">Snel hersteld</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="diensten" id="diensten">
+  <div class="container">
+    <div class="section-label fade-in">Onze Diensten</div>
+    <h2 class="section-title fade-in">Specialist in<br>autoruitschade</h2>
+    <p class="section-sub fade-in">Van sterretje tot complete ruitvervanging — snel, vakkundig en met verzekeringsafhandeling.</p>
+    <div class="diensten-grid">
+      <div class="dienst fade-in fd1">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Sterretje Reparatie</h3>
+        <p>Klein sterretje in uw voorruit? Vaak binnen 30 minuten gerepareerd. Voorkomt verdere scheurvorming.</p>
+      </div>
+      <div class="dienst fade-in fd2">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+        <h3>Voorruit Vervanging</h3>
+        <p>Ruit te beschadigd voor reparatie? Wij vervangen hem snel en vakkundig met gecertificeerd glas.</p>
+      </div>
+      <div class="dienst fade-in fd3">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Zij- & Achterruit</h3>
+        <p>Ook zij- en achterruiten vervangen wij professioneel. Alle merken en modellen.</p>
+      </div>
+      <div class="dienst fade-in fd4">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Verzekeringsafhandeling</h3>
+        <p>Wij handelen de schade direct af met uw verzekeraar. U heeft er geen omkijken naar.</p>
+      </div>
+      <div class="dienst fade-in fd5">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>ADAS Kalibratie</h3>
+        <p>Na ruitvervanging kalibreren wij uw camera en rijhulpsystemen nauwkeurig voor veilig rijden.</p>
+      </div>
+      <div class="dienst fade-in fd5">
+        <div class="dienst-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div>
+        <h3>Ruitenwissers</h3>
+        <p>Nieuwe ruitenwissers nodig? Wij leveren en monteren ze direct bij uw bezoek.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="over">
+  <div class="container">
+    <div class="section-label fade-in">Over Ons</div>
+    <h2 class="section-title fade-in">Waarom klanten kiezen voor<br>Rijzonderruitschade</h2>
+    <p class="section-sub fade-in">Snel, vakkundig en zonder gedoe — dat is onze belofte.</p>
+    <div class="werk-grid">
+      <div class="werk-visual fade-in">
+        <div class="werk-visual-c">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          <p>Ruitschade Specialist • Voorburg</p>
+        </div>
+      </div>
+      <div class="fade-in fd2">
+        <ul class="features">
+          <li><div class="f-chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="f-text"><h4>Snel geholpen</h4><p>Sterretje reparatie vaak binnen 30 minuten. Ruitvervanging dezelfde dag geregeld.</p></div></li>
+          <li><div class="f-chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="f-text"><h4>Geen gedoe met verzekering</h4><p>Wij regelen alles met uw verzekeraar. U hoeft alleen langs te komen.</p></div></li>
+          <li><div class="f-chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="f-text"><h4>Alle merken & modellen</h4><p>Van stadsauto tot SUV — wij hebben het juiste glas voor elk voertuig.</p></div></li>
+          <li><div class="f-chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="f-text"><h4>Voorburg, regio Den Haag</h4><p>Aan de Kersengaarde, makkelijk bereikbaar vanuit Den Haag en omstreken.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label fade-in">Contact</div>
+    <h2 class="section-title fade-in">Neem contact op</h2>
+    <p class="section-sub fade-in">Ruitschade? Bel direct of vraag een offerte aan.</p>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <div class="c-card fade-in fd1">
+          <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h4>Telefoon</h4><p><a href="tel:0612431210">06-12431210</a></p></div>
+        </div>
+        <div class="c-card fade-in fd2">
+          <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Adres</h4><p>Kersengaarde 246<br>2272 NN Voorburg</p></div>
+        </div>
+      </div>
+      <div class="form-wrap fade-in fd2">
+        <h3>Vraag een offerte aan</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="f-row">
+            <div class="fg"><label>Naam</label><input type="text" placeholder="Uw naam" required></div>
+            <div class="fg"><label>Telefoon</label><input type="tel" placeholder="06 - 12345678" required></div>
+          </div>
+          <div class="fg"><label>E-mail</label><input type="email" placeholder="uw@email.nl" required></div>
+          <div class="fg"><label>Type schade</label>
+            <select><option value="">Selecteer type schade</option><option>Sterretje reparatie</option><option>Voorruit vervanging</option><option>Zijruit vervanging</option><option>Achterruit vervanging</option><option>Anders</option></select>
+          </div>
+          <div class="fg"><label>Auto (merk/model)</label><input type="text" placeholder="Bijv. Volkswagen Golf 2023"></div>
+          <div class="fg"><label>Bericht</label><textarea placeholder="Beschrijf de schade..."></textarea></div>
+          <button type="submit" class="btn-submit">Offerte Aanvragen</button>
+        </form>
+        <div id="formOk" style="display:none;text-align:center;padding:40px 20px;">
+          <div style="width:52px;height:52px;margin:0 auto 14px;background:var(--accent-subtle);border:1px solid var(--border-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="margin-bottom:6px;">Aanvraag Verzonden!</h3>
+          <p style="color:var(--text-sec);font-size:.88rem;">Wij nemen zo snel mogelijk contact met u op.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; <span id="yr"></span> <span class="accent">Rijzonderruitschade</span> — Kersengaarde 246, Voorburg</p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const nb=document.getElementById('navbar');window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>50));
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open')});
+function closeMobile(){hb.classList.remove('active');mm.classList.remove('open')}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+function handleSubmit(e){e.preventDefault();document.getElementById('contactForm').style.display='none';document.getElementById('formOk').style.display='block'}
+</script>
+</body>
+</html>
